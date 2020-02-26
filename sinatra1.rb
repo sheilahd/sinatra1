@@ -1,4 +1,5 @@
-require "sinatra"
+require 'sinatra'
+require 'sinatra/reloader'
 enable :sessions
 
 get "/getdoc"do
@@ -18,6 +19,7 @@ end
 
 
 post "/logon" do
+    
   if params[:username] == "bob" && params[:password] == "pass"
     "Success"
   else
@@ -35,5 +37,23 @@ get "/greet" do
     "Hello and welcome #{session[:stored_name]}" 
 end
 
+get '/howmany' do
+   
+    erb :howmany
+end
 
+post '/howmany' do
+   
+    'Thank you for your order!'
+end
 
+get '/candles' do
+   
+    erb :candles
+end
+
+post '/candles' do
+    @num=params[:num]
+    erb :candles
+      
+end

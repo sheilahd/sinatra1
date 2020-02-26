@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+   
+      <p> This is the content as returned by a select statement</p>
+        <% @results.each do |row| %>
+            <% row.each do |att| + '|' %>
+                <%= att %>
+            <% end %>
+            <br>
+        <% end %>
+
+</body>
+</html>
+
