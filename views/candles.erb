@@ -10,10 +10,11 @@
             <input type="integer" name="num">
             <input type="submit" name="Submit">
               </form>   
-      
+          
             <% if @num.to_i > 1 %>
                  <p> Thank you for ordering <%= @num %> candles!</p>  
-                     <% else %>
+                 </br>
+                     <% elsif @num %>
                  <p> Please enter a valid number for your order </p>
              <% end %>
              
